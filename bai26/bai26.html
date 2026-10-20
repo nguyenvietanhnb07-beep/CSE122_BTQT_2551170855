@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng ký CLB Lập trình Web</title>
+
+  <!-- Bootstrap 5 CSS lấy từ CDN (cần có Internet) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<!-- bg-body-secondary: nền xám nhạt toàn trang; py-5: cách trên-dưới -->
+<body class="bg-body-secondary py-5">
+
+  <!-- container + col-lg-8: giới hạn độ rộng và căn giữa card -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+
+        <!-- card: khung trắng bo góc, shadow-sm: bóng đổ nhẹ -->
+        <div class="card shadow-sm">
+
+          <!-- card-header bg-success: tiêu đề nền xanh (#198754), chữ trắng, căn giữa -->
+          <div class="card-header bg-success text-white text-center fs-4 py-3">
+            Đăng ký tham gia CLB Lập trình Web
+          </div>
+
+          <div class="card-body p-4">
+
+            <!-- novalidate: tắt hộp thoại báo lỗi mặc định, dùng thông báo của Bootstrap (xem script cuối trang) -->
+            <form id="formDangKy" class="needs-validation" novalidate>
+
+              <!-- row g-3: lưới có khoảng cách 3 giữa các ô -->
+              <div class="row g-3">
+
+                <!-- col-md-6: màn hình vừa trở lên chia 2 cột, nhỏ hơn thì 1 cột -->
+                <div class="col-md-6">
+                  <label for="hoten" class="form-label">Họ và tên</label>
+                  <!-- form-control: kiểu ô nhập của Bootstrap; required: bắt buộc nhập -->
+                  <input type="text" class="form-control" id="hoten" placeholder="Nguyễn Văn A" required>
+                  <div class="invalid-feedback">Vui lòng nhập họ và tên.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="msv" class="form-label">Mã sinh viên</label>
+                  <input type="text" class="form-control" id="msv" placeholder="22xxxxxx" required>
+                  <div class="invalid-feedback">Vui lòng nhập mã sinh viên.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <!-- type="email": trình duyệt tự kiểm tra định dạng email -->
+                  <input type="email" class="form-control" id="email" placeholder="sv@tlu.edu.vn" required>
+                  <div class="invalid-feedback">Vui lòng nhập email hợp lệ.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="sdt" class="form-label">Số điện thoại</label>
+                  <!-- pattern: chỉ chấp nhận 10 chữ số -->
+                  <input type="tel" class="form-control" id="sdt" placeholder="09xxxxxxxx" pattern="[0-9]{10}" required>
+                  <div class="invalid-feedback">Số điện thoại gồm 10 chữ số.</div>
+                </div>
+
+                <!-- col-12: chiếm trọn một hàng -->
+                <div class="col-12">
+                  <label class="form-label d-block">Trình độ</label>
+                  <!-- form-check-inline: xếp các radio nằm ngang -->
+                  <div class="form-check form-check-inline">
+                    <!-- Cùng name="trinhdo" để chỉ chọn được một lựa chọn -->
+                    <input class="form-check-input" type="radio" name="trinhdo" id="coban" value="coban" checked>
+                    <label class="form-check-label" for="coban">Cơ bản</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="trinhdo" id="kha" value="kha">
+                    <label class="form-check-label" for="kha">Khá</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="trinhdo" id="tot" value="tot">
+                    <label class="form-check-label" for="tot">Tốt</label>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="lop" class="form-label">Chọn lớp</label>
+                  <!-- form-select: kiểu ô chọn của Bootstrap -->
+                  <select class="form-select" id="lop" required>
+                    <option value="" disabled>-- Chọn lớp --</option>
+                    <option value="67CNTT1" selected>67CNTT1</option>
+                    <option value="67CNTT2">67CNTT2</option>
+                    <option value="67CNTT3">67CNTT3</option>
+                    <option value="67HTTT1">67HTTT1</option>
+                  </select>
+                  <div class="invalid-feedback">Vui lòng chọn lớp.</div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <!-- required: phải tick mới được gửi -->
+                    <input class="form-check-input" type="checkbox" id="camket" checked required>
+                    <label class="form-check-label" for="camket">Tôi cam kết tự làm bài và quay video OBS</label>
+                    <div class="invalid-feedback">Bạn cần xác nhận cam kết.</div>
+                  </div>
+                </div>
+
+                <!-- d-grid: nút full chiều ngang trên điện thoại; d-md-flex + justify-content-md-end: dồn nút sang phải từ màn hình vừa -->
+                <div class="col-12 d-grid gap-2 d-md-flex justify-content-md-end">
+                  <!-- btn-outline-secondary: nút viền xám; type="reset": xoá về giá trị ban đầu -->
+                  <button type="reset" class="btn btn-outline-secondary">Nhập lại</button>
+                  <!-- btn-success: nút xanh (#198754); type="submit": gửi form -->
+                  <button type="submit" class="btn btn-success">Đăng ký</button>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Script: khi bấm Đăng ký, nếu form chưa hợp lệ thì chặn gửi và hiện thông báo đỏ -->
+  <script>
+    var form = document.getElementById("formDangKy");   // Lấy form
+    form.addEventListener("submit", function (e) {      // Bắt sự kiện bấm gửi
+      if (!form.checkValidity()) {                      // Nếu có ô chưa hợp lệ
+        e.preventDefault();                             // Không cho gửi
+      }
+      form.classList.add("was-validated");              // Bật hiển thị trạng thái đúng/sai của Bootstrap
+    });
+  </script>
+</body>
+</html>

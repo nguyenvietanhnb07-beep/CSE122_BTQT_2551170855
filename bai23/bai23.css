@@ -1,0 +1,80 @@
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang */
+  margin: 0;                         /* bỏ lề mặc định */
+  font-family: Arial, sans-serif;    /* font không chân */
+  background-color: #FFFFFF;         /* nền trắng */
+}
+
+.khung {                             /* khung chứa thư viện */
+  max-width: 900px;                  /* độ rộng tối đa */
+  margin: 20px auto;                 /* căn giữa ngang, cách dải tiêu đề 20px */
+  padding: 20px;                     /* đệm bên trong */
+  background-color: #F5F7FA;         /* nền xám xanh rất nhạt */
+  border-radius: 8px;                /* bo góc */
+}
+
+h1 {                                 /* tiêu đề thư viện */
+  margin: 0 0 6px;                   /* cách dòng mô tả */
+  font-size: 24px;                   /* cỡ chữ */
+  text-align: center;                /* căn giữa */
+  color: #1F2937;                    /* chữ đen xanh */
+}
+
+.mo-ta {                             /* dòng mô tả */
+  margin: 0 0 18px;                  /* cách lưới ảnh */
+  font-size: 13px;                   /* cỡ chữ nhỏ */
+  text-align: center;                /* căn giữa */
+  color: #6B7280;                    /* chữ xám */
+}
+
+.luoi {                              /* lưới ảnh */
+  display: grid;                     /* chia lưới */
+  grid-template-columns: repeat(3, 1fr);  /* 3 cột rộng bằng nhau */
+  gap: 16px;                         /* khoảng cách giữa các ô */
+}
+
+figure {                             /* mỗi ô ảnh */
+  position: relative;                /* làm mốc để đặt chú thích đè lên ảnh */
+  aspect-ratio: 16 / 9;              /* giữ tỉ lệ khung 16:9 cho mọi ô */
+  margin: 0;                         /* bỏ lề mặc định của figure */
+  overflow: hidden;                  /* phần ảnh phóng to vượt ra ngoài bị cắt, ảnh không tràn khỏi ô */
+  border-radius: 12px;               /* bo góc */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);  /* đổ bóng */
+}
+
+img {                                /* ảnh */
+  display: block;                    /* bỏ khe hở nhỏ dưới ảnh */
+  width: 100%;                       /* rộng bằng ô */
+  height: 100%;                      /* cao bằng ô */
+  object-fit: cover;                 /* cắt ảnh cho vừa ô, không bị méo */
+  transition: transform 0.4s;        /* phóng to / thu nhỏ mượt trong 0.4 giây */
+}
+
+figure:hover img {                   /* khi rê chuột lên ô */
+  transform: scale(1.12);            /* ảnh phóng to 1,12 lần */
+}
+
+figcaption {                         /* lớp phủ chứa tên địa danh */
+  position: absolute;                /* đặt đè lên ảnh */
+  right: 0;                          /* sát mép phải ô */
+  bottom: 0;                         /* sát đáy ô */
+  left: 0;                           /* sát mép trái ô */
+  padding: 28px 12px 8px;            /* đệm trên lớn để gradient mờ dần lên phía trên */
+  font-size: 13px;                   /* cỡ chữ */
+  color: #FFFFFF;                    /* chữ trắng */
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));  /* gradient trong suốt → đen mờ */
+  transition: background 0.4s;       /* lớp phủ đổi độ đậm mượt */
+}
+
+figure:hover figcaption {            /* khi rê chuột lên ô */
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));   /* lớp phủ đậm hơn, nổi chữ hơn */
+}
+
+@media (max-width: 700px) {          /* khi màn hình hẹp hơn 700px */
+  .luoi {                            /* đổi lưới ảnh */
+    grid-template-columns: repeat(2, 1fr);  /* còn 2 cột */
+  }
+}

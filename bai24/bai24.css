@@ -1,0 +1,141 @@
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang */
+  margin: 0;                         /* bỏ lề mặc định */
+  font-family: Arial, sans-serif;    /* font không chân */
+  background-color: #FFFFFF;         /* nền trắng */
+}
+
+.khung {                             /* khung chứa bảng giá */
+  max-width: 900px;                  /* độ rộng tối đa */
+  margin: 20px auto;                 /* căn giữa ngang, cách dải tiêu đề 20px */
+  padding: 24px 20px 32px;           /* đệm bên trong */
+  background-color: #F5F7FF;         /* nền xanh tím rất nhạt */
+}
+
+h1 {                                 /* tiêu đề bảng giá */
+  margin: 0 0 6px;                   /* cách dòng mô tả */
+  font-size: 26px;                   /* cỡ chữ */
+  text-align: center;                /* căn giữa */
+  color: #1E293B;                    /* chữ đen xanh */
+}
+
+.mo-ta {                             /* dòng mô tả */
+  margin: 0 0 24px;                  /* cách lưới gói */
+  font-size: 13px;                   /* cỡ chữ nhỏ */
+  text-align: center;                /* căn giữa */
+  color: #64748B;                    /* chữ xám xanh */
+}
+
+.luoi {                              /* lưới 3 gói */
+  display: grid;                     /* chia lưới */
+  grid-template-columns: repeat(3, 1fr);  /* 3 cột rộng bằng nhau */
+  gap: 18px;                         /* khoảng cách giữa các gói */
+  align-items: center;               /* căn giữa theo chiều dọc: gói giữa cao hơn nên nhô ra hai đầu */
+}
+
+.goi {                               /* thẻ một gói */
+  padding: 22px 20px;                /* đệm bên trong */
+  text-align: center;                /* căn giữa nội dung */
+  background-color: #FFFFFF;         /* nền trắng */
+  border: 1px solid #E2E8F0;         /* viền xám nhạt */
+  border-radius: 14px;               /* bo góc */
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);  /* bóng nhẹ */
+  transition: transform 0.3s, box-shadow 0.3s;   /* nâng lên và đổ bóng mượt khi rê chuột */
+}
+
+.goi:hover {                         /* khi rê chuột lên gói */
+  transform: translateY(-6px);       /* nâng lên 6px */
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.15);  /* bóng đậm hơn */
+}
+
+.goi.hot {                           /* gói giữa nổi bật */
+  padding-top: 28px;                 /* đệm trên lớn hơn */
+  padding-bottom: 28px;              /* đệm dưới lớn hơn: thẻ cao hơn hai gói bên */
+  border: 2px solid #4F46E5;         /* viền màu tím xanh */
+  transform: translateY(-8px);       /* nâng lên so với hai gói bên */
+  box-shadow: 0 14px 32px rgba(79, 70, 229, 0.25);  /* bóng đậm ánh tím */
+}
+
+.goi.hot:hover {                     /* khi rê chuột lên gói nổi bật */
+  transform: translateY(-14px);      /* nâng cao thêm */
+}
+
+.nhan {                              /* nhãn nhỏ phía trên tên gói */
+  display: inline-block;             /* để có đệm và nền bo tròn */
+  padding: 3px 12px;                 /* đệm bên trong */
+  font-size: 10px;                   /* cỡ chữ nhỏ */
+  font-weight: bold;                 /* chữ đậm */
+  letter-spacing: 0.5px;             /* giãn nhẹ khoảng cách chữ */
+  color: #4338CA;                    /* chữ tím xanh */
+  background-color: #EEF2FF;         /* nền tím nhạt */
+  border-radius: 999px;              /* bo tròn hai đầu */
+}
+
+h2 {                                 /* tên gói */
+  margin: 10px 0 4px;                /* cách nhãn và giá */
+  font-size: 18px;                   /* cỡ chữ */
+  color: #1E293B;                    /* chữ đen xanh */
+}
+
+.gia {                               /* dòng giá */
+  margin: 0 0 14px;                  /* cách danh sách bên dưới */
+  font-size: 34px;                   /* cỡ chữ lớn */
+  font-weight: bold;                 /* chữ đậm */
+  color: #1E293B;                    /* chữ đen xanh */
+}
+
+.gia small {                         /* đơn vị giá (đ, k/tháng, tr/tháng) */
+  font-size: 12px;                   /* cỡ chữ nhỏ */
+  font-weight: normal;               /* chữ thường */
+  color: #64748B;                    /* chữ xám xanh */
+}
+
+ul {                                 /* danh sách quyền lợi */
+  margin: 0 0 20px;                  /* cách nút bên dưới */
+  padding: 0;                        /* bỏ thụt đầu dòng mặc định */
+  list-style: none;                  /* bỏ dấu chấm đầu dòng */
+}
+
+li {                                 /* mỗi quyền lợi */
+  padding: 5px 0;                    /* khoảng cách giữa các dòng */
+  font-size: 13px;                   /* cỡ chữ */
+  color: #334155;                    /* chữ xám đậm */
+}
+
+.nut {                               /* nút đăng ký (là liên kết <a> trông như nút) */
+  display: block;                    /* chiếm cả chiều rộng thẻ, dễ bấm */
+  padding: 12px;                     /* đệm bên trong: nút cao, dễ bấm */
+  font-size: 14px;                   /* cỡ chữ */
+  font-weight: bold;                 /* chữ đậm */
+  color: #1E293B;                    /* chữ đen xanh (nút của gói thường) */
+  text-decoration: none;             /* bỏ gạch chân */
+  background-color: #F1F5F9;         /* nền xám nhạt */
+  border-radius: 8px;                /* bo góc */
+  transition: background-color 0.3s; /* đổi màu nền mượt */
+}
+
+.nut:hover {                         /* khi rê chuột lên nút thường */
+  background-color: #E2E8F0;         /* nền đậm hơn một chút */
+}
+
+.hot .nut {                          /* nút của gói nổi bật */
+  color: #FFFFFF;                    /* chữ trắng */
+  background-color: #4F46E5;         /* nền tím xanh */
+}
+
+.hot .nut:hover {                    /* khi rê chuột lên nút gói nổi bật */
+  background-color: #4338CA;         /* nền đậm hơn */
+}
+
+@media (max-width: 720px) {          /* khi màn hình hẹp hơn 720px */
+  .luoi {                            /* đổi lưới gói */
+    grid-template-columns: 1fr;      /* còn 1 cột, các gói xếp dọc */
+  }
+
+  .goi.hot {                         /* gói nổi bật trên màn hình hẹp */
+    transform: none;                 /* bỏ nâng lên vì không còn nằm cạnh các gói khác */
+  }
+}

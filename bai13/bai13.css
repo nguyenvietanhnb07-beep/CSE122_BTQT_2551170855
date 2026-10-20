@@ -1,0 +1,22 @@
+body{
+    background-color: rgb(200, 201, 202);
+    text-align: center;
+}
+.dongho{
+    background-color: #000000 ;
+    border-radius: 10px;
+    padding: 20px;
+}
+.loichao{
+    background-color: #FFFFFF ;
+    color: #c62828;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+}
+img{
+    height: 52px;
+}
+h1{
+    padding:10px;
+}

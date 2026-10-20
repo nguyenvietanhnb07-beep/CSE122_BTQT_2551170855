@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Ai? Cái gì? Ở đâu? …</title>
+  <link rel="stylesheet" href="bai8.css">
+</head>
+
+<body>
+  <!-- Khung trắng bao toàn bộ trang. id="dau-trang" là đích của liên kết "Về đầu trang" -->
+  <div class="trang" id="dau-trang">
+
+    <!-- Tiêu đề trang -->
+    <h1>Ai? Cái gì? Ở đâu? …</h1>
+
+    <!-- Khung chia 2 cột: menu bên trái, nội dung bên phải -->
+    <div class="khung">
+
+      <!-- Cột trái: menu dọc. href="#..." nhảy tới chuyên mục có id tương ứng -->
+      <nav class="menu">
+        <p class="nhan">CHUYÊN MỤC</p>
+        <ul>
+          <li><a href="#tinh-yeu">Tình yêu và gia đình</a></li>
+          <li><a href="#suc-khoe">Sức khỏe</a></li>
+          <li><a href="#du-lich">Du lịch</a></li>
+          <li><a href="#am-thuc">Ẩm thực</a></li>
+          <li><a href="#am-nhac">Âm nhạc</a></li>
+        </ul>
+      </nav>
+
+      <!-- Cột phải: 5 chuyên mục. Mỗi chuyên mục là 1 <section> có id riêng -->
+      <div class="noi-dung">
+
+        <!-- Chuyên mục 1 -->
+        <section id="tinh-yeu">
+          <h2>Tình yêu và gia đình</h2>
+
+          <!-- Mỗi bài: phần chữ bên trái (.chu) + ảnh bên phải -->
+          <div class="bai">
+            <div class="chu">
+              <h3>Trầu cau</h3>
+              <p>Tình yêu là gì? Là ta yêu một người mỗi ngày trong một năm. Mỗi năm trong một đời người…</p>
+            </div>
+            <img src="traucau.jpg" alt="Trầu cau">
+          </div>
+
+          <div class="bai">
+            <div class="chu">
+              <h3>Xây dựng hạnh phúc gia đình qua những bữa cơm hàng ngày</h3>
+              <p>Nói đến hạnh phúc gia đình chúng ta thường mô tả bằng những từ thật đẹp đẽ và được thể hiện qua những giá trị đạo đức đáng trân trọng…</p>
+            </div>
+            <img src="comtrua.jpg" alt="Bữa cơm gia đình">
+          </div>
+
+          <p class="ve-dau"><a href="#dau-trang">Về đầu trang</a></p>
+        </section>
+
+        <!-- Chuyên mục 2 -->
+        <section id="suc-khoe">
+          <h2>Sức khỏe</h2>
+
+          <div class="bai">
+            <div class="chu">
+              <h3>10 lời khuyên trong dinh dưỡng</h3>
+              <p>Cơ thể chúng ta cần nhiều chất dinh dưỡng từ nhiều nguồn lương thực khác nhau…</p>
+            </div>
+            <img src="Suc_khoe_03.jpg" alt="Rau củ">
+          </div>
+
+          <div class="bai">
+            <div class="chu">
+              <h3>Làm sao để bỏ thuốc lá?</h3>
+              <p>Sức khoẻ của chính bạn. Không hút thuốc lá tức là giảm thiểu đáng kể rủi ro mắc các loại bệnh ung thư…</p>
+            </div>
+            <img src="nosmoke.jpg" alt="Không hút thuốc">
+          </div>
+
+          <p class="ve-dau"><a href="#dau-trang">Về đầu trang</a></p>
+        </section>
+
+        <!-- Chuyên mục 3 (bài mẫu, không có ảnh) -->
+        <section id="du-lich">
+          <h2>Du lịch</h2>
+
+          <div class="bai">
+            <div class="chu">
+              <h3>Điểm đến cuối tuần</h3>
+              <p>Gợi ý những địa điểm gần nhà cho một chuyến đi ngắn ngày…</p>
+            </div>
+          </div>
+
+          <p class="ve-dau"><a href="#dau-trang">Về đầu trang</a></p>
+        </section>
+
+        <!-- Chuyên mục 4 -->
+        <section id="am-thuc">
+          <h2>Ẩm thực</h2>
+
+          <div class="bai">
+            <div class="chu">
+              <h3>Các món ăn dân dã</h3>
+              <p>Các món ăn mới trong tuần · Chuyên mục dạy nấu ăn · Món ngon Hà Nội · Các món ăn dân dã ở miền Tây.</p>
+            </div>
+            <img src="Am_thuc.jpg" alt="Món ăn dân dã">
+          </div>
+
+          <p class="ve-dau"><a href="#dau-trang">Về đầu trang</a></p>
+        </section>
+
+        <!-- Chuyên mục 5 -->
+        <section id="am-nhac">
+          <h2>Âm nhạc</h2>
+
+          <div class="bai">
+            <div class="chu">
+              <h3>Nhạc thiếu nhi</h3>
+              <p>Nắng sân trường · Mẹ yêu không nào · Ba bả đi bán lợn con.</p>
+            </div>
+            <img src="nhac_thieu_nhi.jpg" alt="Nhạc thiếu nhi">
+          </div>
+
+          <div class="bai">
+            <div class="chu">
+              <h3>Dân ca</h3>
+              <p>Bèo dạt mây trôi · Mười thương · Lý cây bông.</p>
+            </div>
+            <img src="nhac_dan_ca.jpg" alt="Dân ca">
+          </div>
+
+          <p class="ve-dau"><a href="#dau-trang">Về đầu trang</a></p>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

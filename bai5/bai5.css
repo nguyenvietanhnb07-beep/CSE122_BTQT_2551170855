@@ -1,0 +1,35 @@
+.tieu-de{
+    text-align: center;
+    color: #C2185B;
+}
+
+.bo-cuc{
+    display: flex;
+    justify-content: center;
+    text-item: center;
+    gap: 30px;
+}
+
+.ten-muc{
+    padding: 2px 5px;
+    font-weight: bold;
+    background-color: #FFC0CB;
+}
+
+.muc-1{
+    list-style: square;
+}
+
+.muc-2{
+    list-style: circle;
+}
+
+.ban-quyen{
+    text-align: right;
+    margin-top: 20px;
+}
+
+.ban-quyen a {
+    color:#0000EE;
+    text-decoration: underline;
+}

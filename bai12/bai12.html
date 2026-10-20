@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Lịch ngày</title>
+  <!-- Liên kết file CSS -->
+  <link rel="stylesheet" href="bai12.css">
+</head>
+
+<body>
+  <!-- Thẻ trắng bao toàn bộ nội dung -->
+  <div class="trang">
+
+    <!-- Khung lịch: 4 dòng. class dùng cho CSS, id dùng cho JavaScript điền nội dung -->
+    <div class="lich">
+      <div class="lich-nam" id="nam"></div>
+      <div class="lich-thang" id="thang"></div>
+      <div class="lich-ngay" id="ngay"></div>
+      <div class="lich-thu" id="thu"></div>
+    </div>
+
+    <!-- Lời chào: JavaScript chọn sáng / chiều / tối theo giờ của máy -->
+    <p class="loi-chao" id="loiChao"></p>
+
+    <!-- Khung nhập ngày tháng năm và nút In lịch -->
+    <div class="bieu-mau">
+      <!-- label for="..." gắn nhãn với ô input có cùng id -->
+      <div class="o-nhap">
+        <label for="nhapNgay">Ngày</label>
+        <input type="number" id="nhapNgay" min="1" max="31">
+      </div>
+
+      <div class="o-nhap">
+        <label for="nhapThang">Tháng</label>
+        <input type="number" id="nhapThang" min="1" max="12">
+      </div>
+
+      <div class="o-nhap">
+        <label for="nhapNam">Năm</label>
+        <input type="number" id="nhapNam" min="1900">
+      </div>
+
+      <!-- type="button": chỉ bấm để chạy JavaScript, không gửi biểu mẫu -->
+      <button type="button" id="nutIn">In lịch</button>
+    </div>
+
+  </div>
+
+  <!-- Nạp JavaScript ở CUỐI body để các phần tử phía trên đã có mặt khi script chạy -->
+  <script src="bai12.js"></script>
+</body>
+</html>

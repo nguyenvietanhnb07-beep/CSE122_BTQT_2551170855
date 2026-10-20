@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport: bắt buộc để Bootstrap responsive đúng trên điện thoại -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bài 25 — Trang du lịch với Navbar &amp; Grid</title>
+
+  <!-- Bootstrap 5.3.7 CSS lấy từ CDN chính thức (getbootstrap.com) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+  <!-- CSS riêng của bài (chỉ phần Bootstrap không có sẵn) -->
+  <link rel="stylesheet" href="bai25.css">
+</head>
+
+<!-- bg-light: nền xám rất nhạt; d-flex flex-column + min-vh-100: để footer luôn nằm sát đáy trang -->
+<body class="bg-light d-flex flex-column min-vh-100">
+
+  <!-- ===== 1. NAVBAR =====
+       navbar-expand-md: từ màn hình md (768px) trở lên menu hiện ngang, nhỏ hơn thì thu gọn thành nút hamburger
+       bg-primary: nền xanh #0d6efd;  data-bs-theme="dark": chữ sáng trên nền xanh -->
+  <nav class="navbar navbar-expand-md bg-primary" data-bs-theme="dark">
+    <div class="container">
+      <!-- Tên thương hiệu -->
+      <a class="navbar-brand fw-bold" href="#">CSE.TLU Travel</a>
+
+      <!-- Nút hamburger: chỉ hiện trên màn hình nhỏ.
+           data-bs-toggle="collapse" + data-bs-target="#menu": bấm để mở/đóng phần tử có id="menu" -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Mở menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Phần menu thu gọn được. ms-auto: đẩy menu sang bên phải -->
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#">Trang chủ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Điểm đến</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Tour</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== 2. NỘI DUNG CHÍNH =====
+       container: khung căn giữa, độ rộng tự đổi theo màn hình;  flex-grow-1: chiếm hết chỗ trống để đẩy footer xuống đáy;  py-4: đệm trên/dưới -->
+  <main class="container flex-grow-1 py-4">
+
+    <!-- Hero: khối trắng bo góc.
+         bg-white: nền trắng; rounded-3: bo góc; shadow-sm: bóng nhẹ; text-center: căn giữa; p-5: đệm lớn; mb-4: cách khối bên dưới -->
+    <section class="bg-white rounded-3 shadow-sm text-center p-5 mb-4">
+      <!-- display-5: chữ rất to;  fw-bold: đậm;  text-primary: chữ xanh -->
+      <h1 class="display-5 fw-bold text-primary">Khám phá Việt Nam</h1>
+      <p class="lead">Hành trình qua những kỳ quan thiên nhiên đẹp nhất đất nước.</p>
+      <!-- btn btn-primary: nút xanh;  btn-lg: nút lớn -->
+      <a href="#" class="btn btn-primary btn-lg">Đặt tour ngay</a>
+    </section>
+
+    <!-- Lưới thẻ.
+         row: hàng;  g-4: khoảng cách giữa các cột 1,5rem (24px);
+         mỗi col-md-4 chiếm 4/12 chiều rộng từ md trở lên (3 thẻ cạnh nhau), nhỏ hơn thì mỗi thẻ một hàng -->
+    <div class="row g-4">
+
+      <!-- Thẻ 1 -->
+      <div class="col-md-4">
+        <!-- card: thẻ;  h-100: cao bằng cột nên 3 thẻ đều nhau;  shadow-sm: bóng nhẹ -->
+        <div class="card h-100 shadow-sm">
+          <img src="1-vinh-ha-long.jpg" class="card-img-top" alt="Vịnh Hạ Long">
+          <div class="card-body">
+            <h5 class="card-title">Vịnh Hạ Long</h5>
+            <p class="card-text">Gần 2.000 đảo đá vôi, Di sản thiên nhiên thế giới.</p>
+            <!-- btn-outline-primary: nút viền xanh;  btn-sm: nút nhỏ -->
+            <a href="#" class="btn btn-outline-primary btn-sm">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thẻ 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="3-thac-ban-gioc.jpg" class="card-img-top" alt="Thác Bản Giốc">
+          <div class="card-body">
+            <h5 class="card-title">Thác Bản Giốc</h5>
+            <p class="card-text">Thác nước đẹp nhất Việt Nam, nằm ở Cao Bằng.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thẻ 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img src="4-fansipan.jpg" class="card-img-top" alt="Fansipan">
+          <div class="card-body">
+            <h5 class="card-title">Fansipan</h5>
+            <p class="card-text">"Mái nhà Đông Dương", cao 3.147 m, thuộc Lào Cai.</p>
+            <a href="#" class="btn btn-outline-primary btn-sm">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bootstrap JS (bản bundle đã gồm Popper). Cần để nút hamburger mở/đóng được menu -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>

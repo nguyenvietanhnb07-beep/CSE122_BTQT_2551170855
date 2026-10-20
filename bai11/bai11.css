@@ -1,0 +1,73 @@
+/* ===== Thiết lập chung ===== */
+
+body {
+  margin: 0;                          
+  padding: 24px;                     
+  background: #0f172a;                
+  color: #e2e8f0;                   
+  font-family: Arial, sans-serif;    
+}
+
+/* ===== Đầu trang ===== */
+.page-header {
+  text-align: center;                 
+  margin-bottom: 24px;                
+}
+
+.page-header h1 {
+  margin: 0 0 8px;                    
+  font-size: 30px;                   
+  color: #e2e8f0;                     
+}
+
+.page-header p {
+  margin: 0;                          
+  font-size: 14px;                    
+  color: #94a3b8;                    
+}
+
+/* ===== Lưới ảnh 3 cột ===== */
+.gallery {
+  display: grid;                      
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 18px;                         
+  max-width: 1000px;                  
+  margin: 0 auto;                     
+}
+
+/* ===== Mỗi khối ảnh + chú thích ===== */
+figure {
+  margin: 0;                          
+  background: #1e293b;               
+  border-radius: 10px;               
+  overflow: hidden;                   
+}
+
+/* ===== Ảnh ===== */
+figure img {
+  display: block;                     
+  width: 100%;                       
+  height: 200px;                      
+  object-fit: cover;                 
+}
+
+/* ===== Chú thích ảnh ===== */
+figcaption {
+  padding: 10px 12px;                 
+  font-size: 13px;                    
+  color: #cbd5e1;                     
+}
+
+/* ===== Màn hình vừa (máy tính bảng) ===== */
+@media (max-width: 800px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+/* ===== Màn hình nhỏ (điện thoại) ===== */
+@media (max-width: 520px) {
+  .gallery {
+    grid-template-columns: 1fr;     
+  }
+}

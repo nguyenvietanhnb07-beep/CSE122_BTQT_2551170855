@@ -1,0 +1,32 @@
+.container{
+    width:600px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #9E9E9E;
+    background-color: #FFFDE7;
+}
+
+.tieu_de{
+    color: #D40000;
+    background-color:#FFD9E6;
+    padding:10px;
+}
+
+.kho_tho{
+    style: italic;
+}
+
+.chu_xanh{
+    color:  #0033CC;
+}
+
+.chu_do{
+    color: #D40000;
+}
+
+.duong_ke{
+    margin: 0 auto;
+    width: 55%;
+    border-top:2px solid #0033CC;
+}

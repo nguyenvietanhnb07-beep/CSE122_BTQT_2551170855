@@ -1,0 +1,88 @@
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 30px 20px;                /* chừa khoảng trống quanh máy tính */
+  font-family: Arial, sans-serif;    /* font cho các nút */
+  background-color: #E5E7EB;         /* nền trang xám nhạt */
+}
+
+.may-tinh {                          /* vỏ máy tính */
+  width: 340px;                      /* độ rộng máy */
+  margin: 0 auto;                    /* căn giữa ngang */
+  padding: 20px;                     /* đệm bên trong vỏ */
+  background-color: #111827;         /* nền xanh đen */
+  border-radius: 16px;               /* bo góc vỏ */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);  /* đổ bóng */
+}
+
+.man-hinh {                          /* màn hình */
+  height: 100px;                     /* chiều cao cố định */
+  margin-bottom: 14px;               /* cách bàn phím bên dưới */
+  padding: 14px 16px;                /* đệm bên trong */
+  overflow: hidden;                  /* nội dung quá dài thì bị cắt, không tràn ra ngoài */
+  text-align: right;                 /* chữ căn phải như máy tính thật */
+  font-family: "Courier New", monospace;  /* font đều nét như màn hình số */
+  background-color: #022C22;         /* nền xanh rêu đậm */
+  border-radius: 12px;               /* bo góc màn hình */
+}
+
+.phep-tinh {                         /* dòng phép tính (nhỏ) */
+  min-height: 22px;                  /* giữ chỗ khi dòng còn trống */
+  font-size: 16px;                   /* cỡ chữ nhỏ */
+  white-space: nowrap;               /* không xuống dòng */
+  color: #34A06A;                    /* xanh lá dịu hơn kết quả */
+}
+
+.ket-qua {                           /* dòng kết quả (lớn) */
+  margin-top: 4px;                   /* cách dòng phép tính */
+  font-size: 40px;                   /* cỡ chữ lớn */
+  font-weight: bold;                 /* chữ đậm */
+  white-space: nowrap;               /* không xuống dòng */
+  color: #4ADE80;                    /* xanh lá sáng */
+}
+
+.ban-phim {                          /* bàn phím */
+  display: grid;                     /* chia lưới */
+  grid-template-columns: repeat(4, 1fr);  /* 4 cột rộng bằng nhau */
+  gap: 10px;                         /* khoảng cách giữa các nút */
+}
+
+button {                             /* mọi nút (mặc định là nút số) */
+  height: 52px;                      /* chiều cao nút */
+  font-size: 20px;                   /* cỡ chữ */
+  color: #E5E7EB;                    /* chữ xám sáng */
+  background-color: #25313F;         /* nền xám xanh */
+  border: none;                      /* bỏ viền mặc định */
+  border-radius: 10px;               /* bo góc */
+  cursor: pointer;                   /* con trỏ hình bàn tay */
+}
+
+button:hover {                       /* khi rê chuột vào nút */
+  opacity: 0.85;                     /* nút sáng nhạt đi một chút */
+}
+
+button:active {                      /* khi đang nhấn nút */
+  transform: scale(0.96);            /* nút thu nhỏ nhẹ cho có cảm giác bấm */
+}
+
+.pt {                                /* nút phép tính và ngoặc, % */
+  color: #FFFFFF;                    /* chữ trắng */
+  background-color: #0D6EFD;         /* nền xanh dương */
+}
+
+.xoa {                               /* nút C */
+  color: #FFFFFF;                    /* chữ trắng */
+  background-color: #DC2626;         /* nền đỏ */
+}
+
+.bang {                              /* nút = */
+  color: #FFFFFF;                    /* chữ trắng */
+  background-color: #16A34A;         /* nền xanh lá */
+}
+
+.rong {                              /* nút 0 */
+  grid-column: span 2;               /* chiếm 2 cột */
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Chế độ Tối / Sáng</title>
+  <!-- Liên kết file CSS -->
+  <link rel="stylesheet" href="bai22.css">
+</head>
+
+<!-- class="toi": trang mở lên ở chế độ tối. JavaScript bật/tắt class này khi bấm nút gạt -->
+<body class="toi">
+  <div class="trang">
+
+    <!-- Hàng đầu: tiêu đề bên trái, nút gạt bên phải -->
+    <header>
+      <h1>Chế độ Tối / Sáng</h1>
+      <!-- Nút gạt: role="switch" và aria-checked cho trình đọc màn hình biết đây là công tắc bật/tắt -->
+      <button class="gat" id="gat" role="switch" aria-checked="true" aria-label="Chuyển chế độ tối / sáng"></button>
+    </header>
+
+    <!-- Các thẻ thông tin -->
+    <section class="the">
+      <h2>Biến CSS (CSS Variables)</h2>
+      <p>Toàn bộ màu sắc được khai báo trong <code>:root</code> và ghi đè bằng class <code>.toi</code>.</p>
+    </section>
+
+    <section class="the">
+      <h2>Chuyển đổi bằng JavaScript</h2>
+      <p>Nút gạt thêm/bỏ class <code>.toi</code> trên <code>&lt;body&gt;</code> — mọi thành phần tự đổi màu.</p>
+    </section>
+
+    <section class="the">
+      <h2>Chuyển màu mượt</h2>
+      <p>Dùng <code>transition</code> để màu nền và chữ chuyển dần, không bị giật.</p>
+    </section>
+
+    <!-- Dòng ghi chú: JavaScript cập nhật theo chế độ đang bật -->
+    <p class="ghi-chu" id="ghiChu"></p>
+  </div>
+
+  <!-- Nạp JavaScript ở CUỐI body -->
+  <script src="bai22.js"></script>
+</body>
+</html>

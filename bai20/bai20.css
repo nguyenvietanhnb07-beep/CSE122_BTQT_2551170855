@@ -1,0 +1,123 @@
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang */
+  margin: 0;                         /* bỏ lề mặc định */
+  font-family: Arial, sans-serif;    /* font không chân */
+  background-color: #FFFFFF;         /* nền trang trắng (dải tiêu đề nằm trên nền này) */
+}
+
+.nen {                               /* vùng nền tối */
+  max-width: 640px;                  /* độ rộng tối đa */
+  margin: 20px auto;                 /* căn giữa ngang, cách dải tiêu đề 20px */
+  padding: 24px 16px;                /* đệm bên trong */
+  background-color: #0F1215;         /* nền đen xanh */
+}
+
+.khung {                             /* khung ảnh */
+  max-width: 340px;                  /* độ rộng tối đa */
+  margin: 0 auto 24px;               /* căn giữa ngang, cách thanh nút bên dưới 24px */
+  padding: 18px;                     /* đệm bên trong */
+  text-align: center;                /* căn giữa ảnh và chữ */
+  background-color: #1C2226;         /* nền xám xanh đậm */
+  border-radius: 12px;               /* bo góc */
+}
+
+#anh {                               /* ảnh hoa hồng */
+  display: block;                    /* để căn giữa bằng margin */
+  max-height: 160px;                 /* giới hạn chiều cao ảnh */
+  margin: 0 auto 10px;               /* căn giữa ngang, cách dòng chữ 10px */
+  color: #FFFFFF;                    /* màu chữ thay thế (alt) nếu ảnh lỗi */
+  transition: all 0.3s;              /* đổi hiệu ứng mượt trong 0.3 giây */
+}
+
+.chu {                               /* dòng chữ Special For You */
+  margin: 0;                         /* bỏ lề mặc định */
+  font-family: Georgia, serif;       /* font có chân */
+  font-size: 28px;                   /* cỡ chữ */
+  font-style: italic;                /* chữ nghiêng */
+  background: linear-gradient(90deg, #B8860B, #FFD54F, #B8860B);  /* dải màu vàng gold */
+  -webkit-background-clip: text;     /* cắt nền theo hình chữ (cho Chrome, Safari) */
+  background-clip: text;             /* cắt nền theo hình chữ */
+  -webkit-text-fill-color: transparent;  /* làm chữ trong suốt để lộ dải màu phía sau */
+  color: transparent;                /* như trên, cho trình duyệt khác */
+}
+
+.thanh-nut {                         /* thanh nút */
+  display: flex;                     /* xếp các nút nằm ngang */
+  flex-wrap: wrap;                   /* hết chỗ thì xuống dòng */
+  justify-content: center;           /* căn giữa mỗi dòng nút */
+  gap: 10px;                         /* khoảng cách giữa các nút */
+}
+
+button {                             /* mỗi nút hiệu ứng */
+  padding: 7px 12px;                 /* đệm bên trong */
+  font-size: 14px;                   /* cỡ chữ */
+  color: #E5E7EB;                    /* chữ xám sáng */
+  background-color: #232B30;         /* nền xám xanh đậm */
+  border: 1px solid #333D44;         /* viền mảnh */
+  border-radius: 6px;                /* bo góc */
+  cursor: pointer;                   /* con trỏ hình bàn tay */
+}
+
+button.chon {                        /* nút đang được chọn */
+  color: #FFFFFF;                    /* chữ trắng */
+  background-color: #0D6EFD;         /* nền xanh dương nổi bật */
+  border-color: #0D6EFD;             /* viền cùng màu */
+}
+
+/* ===== CÁC HIỆU ỨNG: JavaScript chỉ việc đổi class của ảnh #anh ===== */
+
+#anh.gray {                          /* Gray: ảnh đen trắng */
+  filter: grayscale(1);              /* grayscale(1) = bỏ hết màu */
+}
+
+#anh.xray {                          /* Xray: đen trắng rồi đảo màu giống phim X-quang */
+  filter: grayscale(1) invert(1);    /* bỏ màu, sau đó đảo sáng thành tối */
+}
+
+#anh.invert {                        /* Invert: đảo ngược màu */
+  filter: invert(1);                 /* invert(1) = đảo hoàn toàn */
+}
+
+#anh.fliph {                         /* FlipH: lật ngang */
+  transform: scaleX(-1);             /* scaleX(-1) = soi gương theo chiều ngang */
+}
+
+#anh.flipv {                         /* FlipV: lật dọc */
+  transform: scaleY(-1);             /* scaleY(-1) = soi gương theo chiều dọc */
+}
+
+#anh.glow {                          /* Glow: ánh sáng toả quanh ảnh */
+  filter: drop-shadow(0 0 8px #FF4081) drop-shadow(0 0 18px #FF4081);  /* hai lớp bóng hồng không lệch, càng ra ngoài càng mờ */
+}
+
+#anh.shadow {                        /* Shadow: bóng đổ nhẹ */
+  filter: drop-shadow(4px 4px 5px rgba(255, 255, 255, 0.35));  /* bóng lệch phải xuống 4px, mờ 5px */
+}
+
+#anh.bold {                          /* Bold Shadow: bóng đổ đậm, nét cứng */
+  filter: drop-shadow(8px 8px 0 rgba(229, 57, 53, 0.8));  /* độ mờ 0 nên bóng sắc cạnh */
+}
+
+#anh.dropshadow {                    /* DropShadow: bóng đổ phía dưới ảnh */
+  filter: drop-shadow(0 12px 8px rgba(255, 255, 255, 0.3));  /* bóng lệch thẳng xuống */
+}
+
+#anh.blur {                          /* Blur: làm mờ */
+  filter: blur(3px);                 /* mờ với bán kính 3px */
+}
+
+#anh.wave {                          /* Wave: ảnh gợn sóng */
+  filter: url(#song);                /* dùng bộ lọc SVG có id="song" trong HTML */
+}
+
+#anh.mask {                          /* Mask: chỉ hiện phần giữa ảnh, mờ dần ra rìa */
+  -webkit-mask-image: radial-gradient(circle, #000 45%, transparent 72%);  /* cho Chrome, Safari */
+  mask-image: radial-gradient(circle, #000 45%, transparent 72%);          /* hình tròn: giữa đặc, ngoài trong suốt */
+}
+
+#anh.alpha {                         /* Alpha: ảnh mờ trong suốt */
+  filter: opacity(0.4);              /* chỉ còn 40% độ đặc */
+}

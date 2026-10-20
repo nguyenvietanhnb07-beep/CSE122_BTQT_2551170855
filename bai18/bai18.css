@@ -1,0 +1,92 @@
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang */
+  margin: 0;                         /* bỏ lề mặc định */
+  font-family: Georgia, "Times New Roman", serif;  /* font có chân cho bài viết */
+  color: #222222;                    /* chữ đen nhạt */
+  background-color: #FFFFFF;         /* nền trắng */
+}
+
+.dai {                               /* dải tiêu đề trang */
+  padding: 12px 16px;                /* đệm bên trong */
+  font-family: Arial, sans-serif;    /* font không chân */
+  font-size: 24px;                   /* cỡ chữ */
+  font-weight: bold;                 /* chữ đậm */
+  color: #B71C1C;                    /* chữ đỏ đậm */
+  background-color: #FDECEA;         /* nền hồng nhạt */
+  border-bottom: 3px solid #B71C1C;  /* đường kẻ đỏ phía dưới */
+}
+
+.bai-viet {                          /* khung bài viết */
+  max-width: 640px;                  /* độ rộng tối đa */
+  margin: 24px auto;                 /* cách dải tiêu đề 24px, căn giữa ngang */
+  padding: 20px 24px;                /* đệm bên trong */
+  background-color: #FFFCF5;         /* nền kem */
+}
+
+h1 {                                 /* tiêu đề bài viết */
+  margin: 0;                         /* bỏ lề mặc định */
+  font-size: 34px;                   /* cỡ chữ lớn */
+  color: #E65100;                    /* chữ cam */
+}
+
+.phu-de {                            /* dòng phụ đề */
+  margin: 0 0 12px;                  /* cách đoạn văn bên dưới */
+  font-size: 18px;                   /* cỡ chữ */
+  color: #E65100;                    /* chữ cam */
+}
+
+p {                                  /* các đoạn văn */
+  font-size: 15px;                   /* cỡ chữ */
+  line-height: 1.9;                  /* giãn dòng rộng */
+  text-align: justify;               /* căn đều hai bên */
+}
+
+.mo-dau::first-letter {              /* chữ cái đầu tiên của đoạn mở đầu */
+  float: left;                       /* nổi sang trái để chữ khác chạy vòng bên phải */
+  padding-right: 6px;                /* cách chữ phía sau */
+  font-size: 54px;                   /* cỡ chữ lớn (drop cap) */
+  font-weight: bold;                 /* chữ đậm */
+  line-height: 0.9;                  /* thu chiều cao dòng để chữ không đẩy lệch đoạn */
+  color: #E65100;                    /* chữ cam */
+}
+
+img {                                /* ảnh hoa */
+  float: right;                      /* nổi bên phải, chữ chạy vòng bên trái */
+  width: 190px;                      /* độ rộng ảnh */
+  margin: 4px 0 12px 20px;           /* cách chữ bên trái 20px */
+  border-radius: 8px;                /* bo góc */
+}
+
+.khoi {                              /* khối Hương vị miền Nam */
+  clear: both;                       /* nằm dưới ảnh, không bị ảnh chen vào */
+  margin-top: 24px;                  /* cách đoạn văn phía trên */
+  padding: 14px 18px;                /* đệm bên trong */
+  background-color: #F4FBF4;         /* nền xanh rất nhạt */
+  border: 2px solid #2E7D32;         /* viền xanh */
+  border-radius: 10px;               /* bo góc */
+}
+
+h2 {                                 /* tiêu đề khối */
+  margin: 0 0 10px;                  /* cách danh sách */
+  font-size: 17px;                   /* cỡ chữ */
+  font-style: italic;                /* chữ nghiêng */
+  color: #2E7D32;                    /* chữ xanh */
+}
+
+ul {                                 /* danh sách món */
+  columns: 2;                        /* chia danh sách thành 2 cột */
+  column-gap: 40px;                  /* khoảng cách giữa 2 cột */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding-left: 22px;                /* chừa chỗ cho dấu đầu dòng */
+  list-style-image: url("icon_list_c.gif");  /* dùng ảnh làm dấu đầu dòng */
+  list-style-type: disc;             /* dự phòng: nếu ảnh không tải được thì dùng dấu chấm tròn */
+}
+
+li {                                 /* mỗi món */
+  margin-bottom: 8px;                /* khoảng cách giữa các món */
+  font-size: 14px;                   /* cỡ chữ */
+  break-inside: avoid;               /* không để một món bị cắt đôi giữa 2 cột */
+}

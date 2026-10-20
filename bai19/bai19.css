@@ -1,0 +1,53 @@
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 20px;                     /* chừa khoảng trống quanh trang */
+  font-family: Georgia, "Times New Roman", serif;  /* font có chân */
+  color: #222222;                    /* chữ đen nhạt */
+  background-color: #FFFFFF;         /* nền trắng */
+}
+
+.trang {                             /* khung 2 cột */
+  display: flex;                     /* ảnh và nội dung nằm ngang */
+  align-items: flex-start;           /* căn theo mép trên, ảnh không bị kéo dãn */
+  gap: 20px;                         /* khoảng cách giữa 2 cột */
+  max-width: 900px;                  /* độ rộng tối đa */
+  margin: 0 auto;                    /* căn giữa ngang */
+}
+
+img {                                /* ảnh đồi cát (cột trái) */
+  width: 32%;                        /* chiếm khoảng 1/3 chiều rộng */
+  max-width: 300px;                  /* nhưng không rộng quá 300px */
+  border-radius: 8px;                /* bo góc */
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);  /* đổ bóng */
+}
+
+.noi-dung {                          /* cột phải */
+  flex: 1;                           /* chiếm hết phần rộng còn lại */
+}
+
+h1 {                                 /* tiêu đề */
+  margin: 0 0 14px;                  /* cách khối chữ bên dưới */
+  font-size: 32px;                   /* cỡ chữ lớn */
+  color: #C9A227;                    /* chữ vàng */
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);  /* bóng đổ chữ: lệch phải 2px, xuống 2px, mờ 3px */
+}
+
+.khoi {                              /* khối chữ */
+  padding: 8px 22px;                 /* đệm bên trong */
+  border: 2px dashed #E07B00;        /* viền nét đứt màu cam */
+  border-radius: 12px;               /* bo góc */
+}
+
+p {                                  /* các đoạn văn */
+  font-size: 15px;                   /* cỡ chữ */
+  line-height: 1.9;                  /* giãn dòng rộng */
+  text-align: justify;               /* căn đều hai bên */
+}
+
+strong {                             /* từ nhấn mạnh (Phan Thiết, Hòn Rơm) */
+  color: #C62828;                    /* chữ đỏ */
+}

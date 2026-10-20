@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khám phá điểm đến</title>
+
+  <!-- Bootstrap 5 CSS lấy từ CDN (cần có Internet) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Ảnh slide cao cố định 340px, phủ kín khung, không méo */
+    .carousel-item img {
+      height: 340px;                    /* Chiều cao cố định theo đề */
+      object-fit: cover;                /* Cắt phần thừa để ảnh không bị méo */
+    }
+
+    /* Nền mờ phía sau chú thích để chữ trắng dễ đọc */
+    .carousel-caption {
+      background: rgba(0, 0, 0, 0.45);  /* Nền đen trong suốt 45% */
+      border-radius: 8px;               /* Bo góc nền chú thích */
+      padding: 8px 16px;                /* Khoảng đệm quanh chữ */
+      left: 15%;                        /* Thu hẹp chú thích cách mép trái */
+      right: 15%;                       /* Thu hẹp chú thích cách mép phải */
+      bottom: 28px;                     /* Nâng lên trên thanh indicators */
+    }
+  </style>
+</head>
+
+<!-- bg-light: nền sáng; py-4: cách trên-dưới -->
+<body class="bg-light py-4">
+
+  <!-- container: giới hạn độ rộng nội dung và căn giữa trang -->
+  <div class="container">
+
+    <!-- text-center: căn giữa; text-primary: chữ xanh #0d6efd; mb-4: cách bên dưới -->
+    <h2 class="text-center text-primary mb-4">Khám phá điểm đến</h2>
+
+    <!-- ===== Carousel ===== -->
+    <!-- carousel slide: băng chuyền ảnh có hiệu ứng trượt; data-bs-ride="carousel": tự chạy ngay khi tải trang -->
+    <!-- rounded-3 overflow-hidden: bo góc và cắt ảnh theo góc bo -->
+    <div id="carouselDiemDen" class="carousel slide rounded-3 overflow-hidden shadow-sm" data-bs-ride="carousel">
+
+      <!-- carousel-indicators: các chấm/thanh chọn nhanh slide; data-bs-slide-to: nhảy tới slide số mấy (bắt đầu từ 0) -->
+      <div class="carousel-indicators">
+        <!-- class "active" đánh dấu slide đang hiển thị -->
+        <button type="button" data-bs-target="#carouselDiemDen" data-bs-slide-to="0" class="active" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselDiemDen" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselDiemDen" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <!-- carousel-inner: vùng chứa các slide -->
+      <div class="carousel-inner">
+
+        <!-- carousel-item active: slide đầu tiên, hiện sẵn -->
+        <div class="carousel-item active">
+          <!-- d-block w-100: ảnh rộng 100% khung -->
+          <img src="1-vinh-ha-long.jpg" class="d-block w-100" alt="Vịnh Hạ Long">
+          <!-- carousel-caption: chú thích nằm đè lên ảnh, chữ trắng -->
+          <div class="carousel-caption">
+            <h5>Vịnh Hạ Long</h5>
+            <p>Di sản thiên nhiên thế giới</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="3-thac-ban-gioc.jpg" class="d-block w-100" alt="Thác Bản Giốc">
+          <div class="carousel-caption">
+            <h5>Thác Bản Giốc</h5>
+            <p>Thác nước hùng vĩ nơi biên giới Cao Bằng</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="6-phong-nha.jpg" class="d-block w-100" alt="Động Phong Nha">
+          <div class="carousel-caption">
+            <h5>Động Phong Nha</h5>
+            <p>Hệ thống hang động kỳ vĩ ở Quảng Bình</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Nút mũi tên Trước (prev): data-bs-slide="prev" quay lại slide trước -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselDiemDen" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Trước</span>
+      </button>
+      <!-- Nút mũi tên Sau (next): data-bs-slide="next" chuyển tới slide kế -->
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselDiemDen" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Sau</span>
+      </button>
+
+    </div>
+
+    <!-- ===== Tab ===== -->
+    <!-- nav nav-pills: thanh tab kiểu viên thuốc, tab chọn nền xanh #0d6efd; justify-content-center: căn giữa; my-4: cách trên-dưới -->
+    <ul class="nav nav-pills justify-content-center my-4" id="tabDiemDen" role="tablist">
+      <li class="nav-item" role="presentation">
+        <!-- data-bs-toggle="pill": bấm để đổi tab; data-bs-target: chỉ tới nội dung (id) cần hiện -->
+        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#gioithieu" type="button" role="tab">Giới thiệu</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#lichtrinh" type="button" role="tab">Lịch trình</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#chiphi" type="button" role="tab">Chi phí</button>
+      </li>
+    </ul>
+
+    <!-- tab-content: vùng chứa nội dung các tab; bg-white border rounded p-3: nền trắng, viền, bo góc, khoảng đệm -->
+    <div class="tab-content bg-white border rounded p-3">
+      <!-- tab-pane fade show active: nội dung tab, hiện sẵn tab đầu; fade: hiệu ứng mờ khi đổi -->
+      <div class="tab-pane fade show active" id="gioithieu" role="tabpanel">
+        Tour 3 ngày 2 đêm khám phá các danh thắng miền Bắc, khởi hành hằng tuần.
+      </div>
+      <div class="tab-pane fade" id="lichtrinh" role="tabpanel">
+        Ngày 1: Hà Nội – Hạ Long, du thuyền tham quan vịnh. Ngày 2: Hang Sửng Sốt, đảo Ti Tốp, nghỉ đêm trên tàu. Ngày 3: Ăn sáng, trả phòng và về Hà Nội.
+      </div>
+      <div class="tab-pane fade" id="chiphi" role="tabpanel">
+        Khoảng 2.500.000 đồng/người, đã gồm xe đưa đón, nghỉ đêm trên tàu, các bữa ăn và vé tham quan.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bootstrap JS bundle: bắt buộc để carousel và tab hoạt động -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

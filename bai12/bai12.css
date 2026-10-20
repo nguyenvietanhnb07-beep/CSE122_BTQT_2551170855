@@ -1,0 +1,101 @@
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang */
+  margin: 0;                         /* bỏ lề mặc định của trình duyệt */
+  padding: 30px 20px;                /* chừa khoảng trống quanh thẻ trắng */
+  font-family: Arial, sans-serif;    /* font không chân cho phần nhập liệu */
+  background-color: #F2F2F2;         /* nền trang xám nhạt */
+}
+
+.trang {                             /* thẻ trắng bao ngoài */
+  max-width: 580px;                  /* độ rộng tối đa */
+  margin: 0 auto;                    /* căn giữa ngang */
+  padding: 28px;                     /* đệm bên trong thẻ */
+  background-color: #FFFFFF;         /* nền trắng */
+  border-radius: 16px;               /* bo góc thẻ */
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);  /* đổ bóng quanh thẻ */
+}
+
+.lich {                              /* khung lịch */
+  padding: 18px 0;                   /* đệm trên/dưới 18px */
+  font-family: Georgia, serif;       /* font có chân cho phần lịch */
+  text-align: center;                /* căn giữa nội dung */
+  border: 1px solid #DDDDDD;         /* viền xám mảnh */
+  border-radius: 10px;               /* bo góc khung */
+}
+
+.lich-nam {                          /* dòng năm */
+  font-size: 16px;                   /* cỡ chữ nhỏ */
+  color: #C62828;                    /* chữ đỏ */
+}
+
+.lich-thang {                        /* dòng tháng */
+  font-size: 24px;                   /* cỡ chữ vừa */
+  color: #1565C0;                    /* chữ xanh */
+}
+
+.lich-ngay {                         /* dòng ngày (số to nhất) */
+  font-size: 64px;                   /* cỡ chữ rất lớn */
+  font-weight: bold;                 /* chữ đậm */
+  line-height: 1.2;                  /* chiều cao dòng */
+  color: #C62828;                    /* chữ đỏ */
+}
+
+.lich-thu {                          /* dòng thứ */
+  font-size: 24px;                   /* cỡ chữ vừa */
+  color: #1565C0;                    /* chữ xanh */
+}
+
+.loi-chao {                          /* lời chào */
+  margin: 22px 0;                    /* cách khung lịch và khung nhập */
+  font-family: Georgia, serif;       /* font có chân */
+  font-size: 24px;                   /* cỡ chữ */
+  font-style: italic;                /* chữ nghiêng */
+  text-align: center;                /* căn giữa */
+  color: #C62828;                    /* chữ đỏ */
+}
+
+.bieu-mau {                          /* khung nhập ngày tháng năm */
+  display: flex;                     /* xếp các ô và nút nằm ngang */
+  justify-content: space-around;     /* chia đều khoảng trống giữa các phần tử */
+  align-items: flex-end;             /* căn theo mép dưới: nút thẳng hàng với ô nhập */
+  padding: 16px 10px;                /* đệm trên/dưới 16px, trái/phải 10px */
+  border: 2px solid #1565C0;         /* viền xanh */
+  border-radius: 8px;                /* bo góc */
+}
+
+.o-nhap {                            /* mỗi cặp nhãn + ô nhập */
+  text-align: center;                /* căn giữa nhãn và ô nhập */
+}
+
+label {                              /* nhãn Ngày / Tháng / Năm */
+  display: block;                    /* chiếm cả dòng nên nằm phía trên ô nhập */
+  margin-bottom: 4px;                /* cách ô nhập bên dưới */
+  font-size: 18px;                   /* cỡ chữ */
+}
+
+button, input {                      /* ô nhập và nút */
+  font-family: inherit;              /* dùng font của trang thay vì font mặc định của trình duyệt */
+}
+
+input {                              /* ô nhập số */
+  width: 86px;                       /* độ rộng ô */
+  padding: 6px 4px;                  /* đệm bên trong */
+  font-size: 16px;                   /* cỡ chữ */
+  text-align: center;                /* số nằm giữa ô */
+  border: 1px solid #CCCCCC;         /* viền xám mảnh */
+  border-radius: 4px;                /* bo góc */
+}
+
+button {                             /* nút In lịch */
+  width: 76px;                       /* nút hẹp nên chữ "In lịch" xuống 2 dòng như ảnh mẫu */
+  padding: 10px 20px;                /* đệm trên/dưới 10px, trái/phải 20px */
+  font-size: 16px;                   /* cỡ chữ */
+  color: #FFFFFF;                    /* chữ trắng */
+  background-color: #546E7A;         /* nền xám xanh */
+  border: none;                      /* bỏ viền mặc định */
+  border-radius: 6px;                /* bo góc */
+  cursor: pointer;                   /* con trỏ hình bàn tay khi rê chuột vào */
+}

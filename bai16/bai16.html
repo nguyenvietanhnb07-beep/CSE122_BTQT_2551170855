@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách việc cần làm</title>
+  <!-- Liên kết file CSS -->
+  <link rel="stylesheet" href="bai16.css">
+</head>
+
+<body>
+  <!-- Thẻ ứng dụng -->
+  <div class="the">
+
+    <!-- Phần tiêu đề: nền tím, chữ trắng, kèm mô tả -->
+    <header>
+      <h1>Danh sách việc cần làm</h1>
+      <p>Thêm việc mới, đánh dấu hoàn thành hoặc xoá — tất cả bằng JavaScript.</p>
+    </header>
+
+    <!-- Ô nhập + nút Thêm. Dùng form để bấm Enter cũng thêm được -->
+    <form class="them" id="bieuMau">
+      <input type="text" id="oNhap" placeholder="Nhập việc cần làm..." autocomplete="off">
+      <button type="submit" class="nut-them">Thêm</button>
+    </form>
+
+    <!-- Danh sách việc: JavaScript thêm các thẻ <li> vào đây -->
+    <ul id="danhSach"></ul>
+
+    <!-- Số việc còn lại: JavaScript cập nhật -->
+    <p class="dem" id="dem"></p>
+  </div>
+
+  <!-- Nạp JavaScript ở CUỐI body -->
+  <script src="bai16.js"></script>
+</body>
+</html>

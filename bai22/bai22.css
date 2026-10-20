@@ -1,0 +1,125 @@
+:root {                              /* khai báo các biến màu cho chế độ SÁNG (mặc định) */
+  --nen: #F8FAFC;                    /* nền trang */
+  --chu: #0F172A;                    /* chữ chính */
+  --chu-phu: #475569;                /* chữ nội dung thẻ và ghi chú */
+  --the: #FFFFFF;                    /* nền thẻ thông tin */
+  --vien: #E2E8F0;                   /* viền thẻ */
+  --nhan: #2563EB;                   /* chữ tiêu đề thẻ */
+  --code-nen: #E2E8F0;               /* nền chữ code */
+  --gat-nen: #CBD5E1;                /* nền nút gạt khi tắt */
+  --gat-nhan: #60A5FA;               /* màu viền nút gạt khi bấm vào (focus) */
+}
+
+.toi {                               /* chế độ TỐI: ghi đè lại các biến, các quy tắc khác không phải sửa */
+  --nen: #0F172A;                    /* nền trang tối */
+  --chu: #E2E8F0;                    /* chữ chính sáng */
+  --chu-phu: #CBD5E1;                /* chữ nội dung thẻ */
+  --the: #1E293B;                    /* nền thẻ tối */
+  --vien: #334155;                   /* viền thẻ */
+  --nhan: #60A5FA;                   /* chữ tiêu đề thẻ xanh sáng */
+  --code-nen: #0F172A;               /* nền chữ code */
+  --gat-nen: #2563EB;                /* nền nút gạt khi bật */
+}
+
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 20px;                     /* chừa khoảng trống quanh nội dung */
+  font-family: Arial, sans-serif;    /* font không chân */
+  color: var(--chu);                 /* màu chữ lấy từ biến */
+  background-color: var(--nen);      /* màu nền lấy từ biến */
+  transition: background-color 0.3s, color 0.3s;  /* màu nền và chữ đổi dần trong 0.3 giây */
+}
+
+.trang {                             /* khung nội dung */
+  max-width: 640px;                  /* độ rộng tối đa */
+  margin: 0 auto;                    /* căn giữa ngang */
+}
+
+header {                             /* hàng tiêu đề + nút gạt */
+  display: flex;                     /* xếp ngang */
+  justify-content: space-between;    /* tiêu đề dồn trái, nút gạt dồn phải */
+  align-items: center;               /* căn giữa theo chiều dọc */
+  margin-bottom: 20px;               /* cách các thẻ bên dưới */
+}
+
+h1 {                                 /* tiêu đề trang */
+  margin: 0;                         /* bỏ lề mặc định */
+  font-size: 24px;                   /* cỡ chữ */
+}
+
+.gat {                               /* nút gạt (phần nền hình viên thuốc) */
+  position: relative;                /* làm mốc để đặt núm tròn bên trong */
+  width: 52px;                       /* chiều rộng */
+  height: 30px;                      /* chiều cao */
+  padding: 0;                        /* bỏ đệm mặc định của nút */
+  background-color: var(--gat-nen); /* nền lấy từ biến */
+  border: none;                      /* bỏ viền mặc định */
+  border-radius: 15px;               /* bo tròn hai đầu */
+  cursor: pointer;                   /* con trỏ hình bàn tay */
+  transition: background-color 0.3s; /* nền đổi dần */
+}
+
+.gat::after {                        /* núm tròn trượt trên nút gạt */
+  content: "";                       /* tạo phần tử trống để vẽ hình tròn */
+  position: absolute;                /* đặt vị trí tự do trong nút gạt */
+  top: 3px;                          /* cách mép trên 3px */
+  left: 3px;                         /* cách mép trái 3px (vị trí TẮT) */
+  width: 24px;                       /* chiều rộng núm */
+  height: 24px;                      /* chiều cao núm */
+  background-color: #FFFFFF;         /* núm trắng */
+  border-radius: 50%;                /* hình tròn */
+  transition: left 0.3s;             /* núm trượt mượt */
+}
+
+.toi .gat::after {                   /* khi ở chế độ tối (nút BẬT) */
+  left: 25px;                        /* núm trượt sang phải */
+}
+
+.gat:focus-visible {                 /* khi chọn nút bằng bàn phím */
+  outline: 3px solid var(--gat-nhan);  /* viền nhấn quanh nút */
+  outline-offset: 2px;               /* cách nút 2px */
+}
+
+.the {                               /* thẻ thông tin */
+  margin-bottom: 16px;               /* khoảng cách giữa các thẻ */
+  padding: 16px 18px;                /* đệm bên trong */
+  background-color: var(--the);      /* nền thẻ lấy từ biến */
+  border: 1px solid var(--vien);     /* viền lấy từ biến */
+  border-radius: 10px;               /* bo góc */
+  transition: background-color 0.3s, border-color 0.3s;  /* nền và viền đổi dần */
+}
+
+h2 {                                 /* tiêu đề thẻ */
+  margin: 0 0 8px;                   /* cách đoạn văn bên dưới */
+  font-size: 16px;                   /* cỡ chữ */
+  color: var(--nhan);                /* màu lấy từ biến */
+  transition: color 0.3s;            /* chữ đổi màu dần */
+}
+
+.the p {                             /* đoạn mô tả trong thẻ */
+  margin: 0;                         /* bỏ lề mặc định */
+  font-size: 14px;                   /* cỡ chữ */
+  line-height: 1.6;                  /* giãn dòng */
+  color: var(--chu-phu);             /* màu lấy từ biến */
+  transition: color 0.3s;            /* chữ đổi màu dần */
+}
+
+code {                               /* chữ mã lệnh trong đoạn văn */
+  padding: 1px 5px;                  /* đệm nhỏ quanh chữ */
+  font-family: "Courier New", monospace;  /* font đều nét */
+  font-size: 13px;                   /* cỡ chữ */
+  background-color: var(--code-nen); /* nền lấy từ biến */
+  border-radius: 4px;                /* bo góc */
+  transition: background-color 0.3s; /* nền đổi dần */
+}
+
+.ghi-chu {                           /* dòng ghi chú cuối trang */
+  margin: 0;                         /* bỏ lề mặc định */
+  font-size: 12px;                   /* cỡ chữ nhỏ */
+  color: var(--chu-phu);             /* màu lấy từ biến */
+  transition: color 0.3s;            /* chữ đổi màu dần */
+}

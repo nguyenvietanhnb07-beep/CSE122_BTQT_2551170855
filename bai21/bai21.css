@@ -1,0 +1,127 @@
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang cũng là khung lưới chia 4 vùng */
+  display: grid;                     /* chia lưới */
+  grid-template-columns: 200px 1fr 160px;  /* 3 cột: menu 200px, nội dung co giãn, quảng cáo 160px */
+  grid-template-rows: auto 1fr;      /* 2 hàng: banner cao vừa đủ, phần còn lại chiếm hết chỗ trống */
+  grid-template-areas:               /* đặt tên các vùng để xếp vị trí */
+    "banner banner banner"
+    "menu   noidung qc";
+  min-height: 100vh;                 /* cao ít nhất bằng màn hình để menu đỏ kéo dài xuống đáy */
+  margin: 0;                         /* bỏ lề mặc định */
+  font-family: Arial, sans-serif;    /* font không chân */
+  color: #222222;                    /* chữ đen nhạt */
+}
+
+.banner {                            /* vùng 1: banner */
+  grid-area: banner;                 /* chiếm vùng tên "banner" (cả 3 cột hàng trên) */
+  display: flex;                     /* logo và tiêu đề nằm ngang */
+  align-items: center;               /* căn giữa theo chiều dọc */
+  gap: 12px;                         /* khoảng cách giữa logo và tiêu đề */
+  padding: 8px 16px;                 /* đệm bên trong */
+  color: #FFFFFF;                    /* chữ trắng */
+  background-color: #C62828;         /* nền đỏ (hiện khi ảnh nền không tải được) */
+  background-image: url("Anh/Bai21/Nen_banner.jpg");  /* ảnh nền banner */
+  background-size: cover;            /* ảnh nền phủ kín banner */
+}
+
+.banner img {                        /* logo */
+  height: 36px;                      /* chiều cao logo */
+}
+
+h1 {                                 /* tiêu đề trong banner */
+  margin: 0;                         /* bỏ lề mặc định */
+  font-size: 22px;                   /* cỡ chữ */
+}
+
+.menu {                              /* vùng 2: menu dọc */
+  grid-area: menu;                   /* chiếm vùng tên "menu" */
+  background: linear-gradient(#C62828, #8E0000);  /* nền đỏ đậm dần từ trên xuống */
+}
+
+.menu ul {                           /* danh sách trong menu */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 0;                        /* bỏ thụt đầu dòng mặc định */
+  list-style: none;                  /* bỏ dấu chấm đầu dòng */
+}
+
+.menu a {                            /* mỗi mục menu */
+  display: block;                    /* chiếm cả hàng để bấm dễ hơn */
+  padding: 12px 14px;                /* đệm bên trong */
+  font-size: 13px;                   /* cỡ chữ */
+  color: #FFFFFF;                    /* chữ trắng */
+  text-decoration: none;             /* bỏ gạch chân */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);  /* đường kẻ mảnh giữa các mục */
+}
+
+.menu a:hover {                      /* khi rê chuột vào mục menu */
+  background-color: rgba(255, 255, 255, 0.15);  /* nền sáng lên một chút */
+}
+
+.noi-dung {                          /* vùng 3: nội dung chính */
+  grid-area: noidung;                /* chiếm vùng tên "noidung" */
+  padding: 20px;                     /* đệm bên trong */
+  background-color: #FFFFFF;         /* nền trắng */
+}
+
+h2 {                                 /* tiêu đề nội dung */
+  margin: 0 0 14px;                  /* cách hộp vàng bên dưới */
+  font-size: 22px;                   /* cỡ chữ */
+  color: #C62828;                    /* chữ đỏ */
+}
+
+.hop-vang {                          /* hộp vàng chứa menu con */
+  margin-bottom: 18px;               /* cách hộp bên dưới */
+  padding: 10px 14px;                /* đệm bên trong */
+  background-color: #FFE082;         /* nền vàng */
+  border-radius: 8px;                /* bo góc */
+}
+
+.hop-vang ul {                       /* danh sách menu con */
+  display: flex;                     /* các mục nằm ngang */
+  gap: 28px;                         /* khoảng cách giữa các mục */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding-left: 18px;                /* chừa chỗ cho dấu chấm đầu dòng */
+  font-size: 14px;                   /* cỡ chữ */
+}
+
+.hop-chu {                           /* hộp nội dung viền xám */
+  padding: 18px;                     /* đệm bên trong */
+  font-size: 14px;                   /* cỡ chữ */
+  border: 1px solid #E0E0E0;         /* viền xám nhạt */
+  border-radius: 8px;                /* bo góc */
+}
+
+.hop-chu p {                         /* đoạn văn trong hộp */
+  margin: 0 0 10px;                  /* khoảng cách giữa các đoạn */
+  line-height: 1.5;                  /* giãn dòng */
+}
+
+.giua {                              /* đoạn căn giữa */
+  text-align: center;                /* căn giữa */
+}
+
+.quang-cao {                         /* vùng 4: cột quảng cáo */
+  grid-area: qc;                     /* chiếm vùng tên "qc" */
+  padding: 12px;                     /* đệm bên trong */
+}
+
+.quang-cao img {                     /* mỗi ảnh quảng cáo */
+  display: block;                    /* mỗi ảnh một hàng, xếp dọc */
+  width: 100%;                       /* rộng bằng cột */
+  margin-bottom: 10px;               /* khoảng cách giữa 2 ảnh */
+}
+
+@media (max-width: 760px) {          /* khi màn hình hẹp hơn 760px (điện thoại) */
+  body {                             /* đổi lưới của trang */
+    grid-template-columns: 1fr;      /* chỉ còn 1 cột */
+    grid-template-rows: auto;        /* các hàng tự cao theo nội dung */
+    grid-template-areas:             /* xếp 4 vùng chồng lên nhau theo thứ tự */
+      "banner"
+      "menu"
+      "noidung"
+      "qc";
+  }
+}

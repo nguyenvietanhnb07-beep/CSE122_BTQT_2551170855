@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Máy tính</title>
+  <!-- Liên kết file CSS -->
+  <link rel="stylesheet" href="bai15.css">
+</head>
+
+<body>
+  <!-- Vỏ máy tính -->
+  <div class="may-tinh">
+
+    <!-- Màn hình: dòng trên là phép tính (nhỏ), dòng dưới là kết quả (lớn). JavaScript điền nội dung -->
+    <div class="man-hinh">
+      <div class="phep-tinh" id="phepTinh"></div>
+      <div class="ket-qua" id="ketQua">0</div>
+    </div>
+
+    <!-- Bàn phím lưới 4 cột x 5 hàng.
+         data-gt là giá trị của nút, JavaScript đọc khi nút được bấm -->
+    <div class="ban-phim" id="banPhim">
+      <!-- Hàng 1 -->
+      <button class="xoa" data-gt="C">C</button>
+      <button class="pt" data-gt="()">( )</button>
+      <button class="pt" data-gt="%">%</button>
+      <button class="pt" data-gt="÷">÷</button>
+
+      <!-- Hàng 2 -->
+      <button data-gt="7">7</button>
+      <button data-gt="8">8</button>
+      <button data-gt="9">9</button>
+      <button class="pt" data-gt="×">×</button>
+
+      <!-- Hàng 3 -->
+      <button data-gt="4">4</button>
+      <button data-gt="5">5</button>
+      <button data-gt="6">6</button>
+      <button class="pt" data-gt="−">−</button>
+
+      <!-- Hàng 4 -->
+      <button data-gt="1">1</button>
+      <button data-gt="2">2</button>
+      <button data-gt="3">3</button>
+      <button class="pt" data-gt="+">+</button>
+
+      <!-- Hàng 5: nút 0 chiếm 2 cột -->
+      <button class="rong" data-gt="0">0</button>
+      <button data-gt=".">.</button>
+      <button class="bang" data-gt="=">=</button>
+    </div>
+
+  </div>
+
+  <!-- Nạp JavaScript ở CUỐI body -->
+  <script src="bai15.js"></script>
+</body>
+</html>

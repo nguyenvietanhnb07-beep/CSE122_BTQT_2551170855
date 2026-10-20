@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đăng ký tài khoản</title>
+  <!-- Liên kết file CSS -->
+  <link rel="stylesheet" href="bai17.css">
+</head>
+
+<body>
+  <!-- Thẻ form. novalidate: tắt kiểm tra mặc định của trình duyệt để dùng kiểm tra bằng JavaScript -->
+  <form class="the" id="bieuMau" novalidate>
+    <h1>Đăng ký tài khoản</h1>
+    <p class="mo-ta">Dữ liệu được kiểm tra bằng JavaScript trước khi gửi.</p>
+
+    <!-- Mỗi trường gồm: nhãn + ô nhập + dòng thông báo (JavaScript điền).
+         Class "loi" hoặc "hop-le" được JavaScript gắn vào khung .truong để đổi màu -->
+    <div class="truong">
+      <label for="hoTen">Họ và tên</label>
+      <input type="text" id="hoTen">
+      <p class="tb"></p>
+    </div>
+
+    <div class="truong">
+      <label for="email">Email</label>
+      <input type="email" id="email">
+      <p class="tb"></p>
+    </div>
+
+    <div class="truong">
+      <label for="matKhau">Mật khẩu</label>
+      <input type="password" id="matKhau">
+      <p class="tb"></p>
+    </div>
+
+    <div class="truong">
+      <label for="xacNhan">Xác nhận mật khẩu</label>
+      <input type="password" id="xacNhan">
+      <p class="tb"></p>
+    </div>
+
+    <button type="submit">Đăng ký</button>
+  </form>
+
+  <!-- Nạp JavaScript ở CUỐI body -->
+  <script src="bai17.js"></script>
+</body>
+</html>

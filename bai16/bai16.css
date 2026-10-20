@@ -1,0 +1,122 @@
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 30px 20px;                /* chừa khoảng trống quanh thẻ */
+  font-family: Arial, sans-serif;    /* font không chân */
+  background-color: #F3F4F8;         /* nền trang xám nhạt */
+}
+
+.the {                               /* thẻ ứng dụng */
+  max-width: 600px;                  /* độ rộng tối đa 600px */
+  margin: 0 auto;                    /* căn giữa ngang */
+  overflow: hidden;                  /* cắt góc của phần tiêu đề theo góc bo của thẻ */
+  background-color: #FFFFFF;         /* nền trắng */
+  border-radius: 16px;               /* bo góc thẻ */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);  /* đổ bóng rộng */
+}
+
+header {                             /* phần tiêu đề */
+  padding: 22px 24px;                /* đệm bên trong */
+  color: #FFFFFF;                    /* chữ trắng */
+  background-color: #6D28D9;         /* nền tím */
+}
+
+h1 {                                 /* tiêu đề */
+  margin: 0 0 4px;                   /* chỉ chừa 4px phía dưới */
+  font-size: 24px;                   /* cỡ chữ lớn */
+}
+
+header p {                           /* dòng mô tả */
+  margin: 0;                         /* bỏ lề mặc định */
+  font-size: 14px;                   /* cỡ chữ nhỏ */
+}
+
+.them {                              /* khung ô nhập + nút Thêm */
+  display: flex;                     /* xếp ô nhập và nút nằm ngang */
+  gap: 10px;                         /* khoảng cách giữa ô nhập và nút */
+  padding: 20px 24px;                /* đệm bên trong */
+  border-bottom: 1px solid #EDE9FE;  /* đường kẻ dưới */
+}
+
+#oNhap {                             /* ô nhập */
+  flex: 1;                           /* chiếm hết phần rộng còn lại */
+  padding: 11px 14px;                /* đệm bên trong */
+  font-size: 15px;                   /* cỡ chữ */
+  border: 1px solid #D1D5DB;         /* viền xám */
+  border-radius: 10px;               /* bo góc */
+}
+
+#oNhap:focus {                       /* khi đang gõ vào ô nhập */
+  outline: none;                     /* bỏ khung focus mặc định */
+  border-color: #6D28D9;             /* viền chuyển sang màu tím */
+}
+
+.nut-them {                          /* nút Thêm */
+  padding: 0 22px;                   /* đệm trái/phải */
+  font-size: 15px;                   /* cỡ chữ */
+  font-weight: bold;                 /* chữ đậm */
+  color: #FFFFFF;                    /* chữ trắng */
+  background-color: #6D28D9;         /* nền tím */
+  border: none;                      /* bỏ viền mặc định */
+  border-radius: 10px;               /* bo góc */
+  cursor: pointer;                   /* con trỏ hình bàn tay */
+}
+
+ul {                                 /* danh sách việc */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 8px 24px 0;               /* đệm: trên 8px, trái/phải 24px */
+  list-style: none;                  /* bỏ dấu chấm đầu dòng */
+}
+
+li {                                 /* mỗi việc */
+  display: flex;                     /* ô chọn, chữ và nút Xoá nằm ngang */
+  align-items: center;               /* căn giữa theo chiều dọc */
+  gap: 12px;                         /* khoảng cách giữa các phần */
+  padding: 12px 0;                   /* đệm trên/dưới */
+  border-bottom: 1px dashed #EDE9FE; /* kẻ nét đứt giữa các việc */
+  cursor: pointer;                   /* rê chuột vào thì hiện bàn tay: bấm để đổi trạng thái */
+}
+
+.o-chon {                            /* ô đánh dấu */
+  flex-shrink: 0;                    /* không bị co lại */
+  width: 22px;                       /* chiều rộng */
+  height: 22px;                      /* chiều cao */
+  border: 2px solid #A78BFA;         /* viền tím nhạt */
+  border-radius: 6px;                /* bo góc */
+}
+
+.chu {                               /* nội dung việc */
+  flex: 1;                           /* chiếm hết phần rộng còn lại, đẩy nút Xoá sang phải */
+  font-size: 16px;                   /* cỡ chữ */
+  color: #111827;                    /* chữ đen */
+}
+
+.xong .o-chon {                      /* ô đánh dấu của việc đã xong */
+  background-color: #6D28D9;         /* tô đầy màu tím */
+  border-color: #6D28D9;             /* viền tím đậm */
+}
+
+.xong .chu {                         /* chữ của việc đã xong */
+  color: #9CA3AF;                    /* chữ xám */
+  text-decoration: line-through;     /* gạch ngang */
+}
+
+.xoa {                               /* nút Xoá */
+  padding: 6px 12px;                 /* đệm bên trong */
+  font-size: 14px;                   /* cỡ chữ */
+  color: #B91C1C;                    /* chữ đỏ */
+  background-color: #FDE2E2;         /* nền hồng */
+  border: none;                      /* bỏ viền mặc định */
+  border-radius: 8px;                /* bo góc */
+  cursor: pointer;                   /* con trỏ hình bàn tay */
+}
+
+.dem {                               /* dòng số việc còn lại */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 20px 24px 24px;           /* đệm bên trong */
+  font-size: 14px;                   /* cỡ chữ */
+  color: #6B7280;                    /* chữ xám */
+}

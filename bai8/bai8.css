@@ -1,0 +1,119 @@
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang */
+  margin: 0;                         /* bỏ lề mặc định của trình duyệt */
+  padding: 20px;                     /* chừa khoảng trống quanh khung trắng */
+  font-family: Arial, sans-serif;    /* font không chân */
+  background-color: #E9EEF3;         /* nền trang xám xanh nhạt */
+}
+
+a {                                  /* mọi liên kết (menu và "Về đầu trang") */
+  color: #1668C1;                    /* chữ xanh */
+  text-decoration: none;             /* bỏ gạch chân */
+}
+
+p {                                  /* mọi đoạn văn */
+  margin: 0;                         /* bỏ lề mặc định */
+}
+
+.trang {                             /* khung trắng bao ngoài */
+  max-width: 960px;                  /* độ rộng tối đa */
+  margin: 0 auto;                    /* căn giữa ngang */
+  background-color: #FFFFFF;         /* nền trắng */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);  /* đổ bóng nhẹ quanh khung */
+}
+
+h1 {                                 /* tiêu đề trang */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 14px 20px;                /* đệm trên/dưới 14px, trái/phải 20px */
+  font-size: 24px;                   /* cỡ chữ lớn */
+  color: #1668C1;                    /* chữ xanh */
+  border-bottom: 2px solid #1668C1;  /* gạch chân màu xanh dưới tiêu đề */
+}
+
+.khung {                             /* khung chứa 2 cột */
+  display: flex;                     /* xếp menu và nội dung thành 2 cột ngang */
+}
+
+.menu {                              /* cột trái: menu */
+  width: 190px;                      /* độ rộng cố định */
+  padding: 20px 16px;                /* đệm trên/dưới 20px, trái/phải 16px */
+  background-color: #F4F7FB;         /* nền xanh rất nhạt */
+  border-right: 1px solid #D6E0EA;   /* đường kẻ mảnh giữa menu và nội dung */
+}
+
+.nhan {                              /* chữ nhỏ "CHUYÊN MỤC" */
+  margin-bottom: 6px;                /* cách danh sách bên dưới */
+  font-size: 11px;                   /* cỡ chữ nhỏ */
+  font-weight: bold;                 /* chữ đậm */
+  letter-spacing: 1px;               /* giãn khoảng cách giữa các chữ cái */
+  color: #777777;                    /* chữ xám */
+}
+
+.menu ul {                           /* danh sách trong menu */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 0;                        /* bỏ thụt đầu dòng mặc định */
+  list-style: none;                  /* bỏ dấu chấm đầu dòng */
+}
+
+.menu li {                           /* từng mục trong menu */
+  font-size: 15px;                   /* cỡ chữ */
+  line-height: 26px;                 /* chiều cao mỗi dòng, tạo khoảng cách giữa các mục */
+}
+
+.noi-dung {                          /* cột phải: nội dung */
+  flex: 1;                           /* chiếm toàn bộ phần rộng còn lại */
+  padding: 24px 20px 18px;           /* đệm: trên 24px, trái/phải 20px, dưới 18px */
+}
+
+section {                            /* mỗi chuyên mục */
+  margin-bottom: 10px;               /* khoảng cách tới chuyên mục kế tiếp */
+}
+
+h2 {                                 /* thanh tiêu đề chuyên mục */
+  margin: 0 0 10px;                  /* chỉ chừa 10px phía dưới */
+  padding: 0 12px;                   /* đệm trái/phải để chữ không sát mép thanh */
+  font-size: 14px;                   /* cỡ chữ */
+  font-weight: normal;               /* chữ thường (bỏ đậm mặc định của h2) */
+  line-height: 30px;                 /* chiều cao thanh = 30px */
+  color: #FFFFFF;                    /* chữ trắng */
+  background-color: #1668C1;         /* nền xanh */
+  border-radius: 4px;                /* bo góc nhẹ */
+}
+
+.bai {                               /* mỗi bài viết */
+  display: flex;                     /* chữ bên trái, ảnh bên phải */
+  align-items: flex-start;           /* căn theo mép trên, ảnh không bị kéo dãn */
+  gap: 16px;                         /* khoảng cách giữa chữ và ảnh */
+  padding: 12px 0;                   /* đệm trên/dưới 12px */
+  border-bottom: 1px dotted #CCCCCC; /* đường kẻ chấm mảnh ngăn các bài */
+}
+
+.chu {                               /* phần chữ của bài viết */
+  flex: 1;                           /* chiếm phần rộng còn lại, đẩy ảnh sang phải */
+}
+
+h3 {                                 /* tiêu đề bài viết */
+  margin: 0 0 4px;                   /* chỉ chừa 4px phía dưới */
+  font-size: 14px;                   /* cỡ chữ nhỏ hơn tiêu đề chuyên mục */
+  color: #1668C1;                    /* chữ xanh */
+}
+
+.bai p {                             /* đoạn mô tả ngắn của bài */
+  font-size: 12px;                   /* cỡ chữ */
+  line-height: 1.7;                  /* giãn dòng */
+  color: #111111;                    /* chữ đen */
+}
+
+img {                                /* ảnh minh hoạ */
+  width: 130px;                      /* độ rộng ảnh (chiều cao tự tính theo tỉ lệ) */
+  border-radius: 6px;                /* bo góc */
+}
+
+.ve-dau {                            /* dòng chứa liên kết "Về đầu trang" */
+  margin-top: 8px;                   /* cách bài viết phía trên */
+  font-size: 12px;                   /* cỡ chữ nhỏ */
+  text-align: right;                 /* căn sang phải */
+}

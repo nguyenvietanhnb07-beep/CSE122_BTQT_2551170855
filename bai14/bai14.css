@@ -1,0 +1,71 @@
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang */
+  margin: 0;                         /* bỏ lề mặc định của trình duyệt */
+  font-family: Arial, sans-serif;    /* font không chân */
+  background-color: #F0F0F0;         /* nền trang xám nhạt */
+}
+
+.trang {                             /* khung bao ngoài */
+  max-width: 960px;                  /* độ rộng tối đa */
+  margin: 0 auto;                    /* căn giữa ngang */
+}
+
+h1 {                                 /* dải tiêu đề */
+  margin: 0;                         /* bỏ lề mặc định để dải sát mép */
+  padding: 14px 20px;                /* đệm trên/dưới 14px, trái/phải 20px */
+  font-size: 24px;                   /* cỡ chữ lớn */
+  text-align: center;                /* căn giữa */
+  color: #FFEB3B;                    /* chữ vàng */
+  background-color: #2E7D32;         /* nền xanh lá */
+}
+
+.dan-nhap {                          /* đoạn dẫn nhập */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 16px 20px;                /* đệm trong */
+  font-size: 15px;                   /* cỡ chữ */
+  font-style: italic;                /* chữ nghiêng */
+  color: #1B5E20;                    /* chữ xanh đậm */
+  background-color: #FFFFFF;         /* nền trắng */
+  border-bottom: 1px solid #DDDDDD;  /* đường kẻ mảnh phía dưới */
+}
+
+.luoi {                              /* lưới các kỳ quan */
+  display: grid;                     /* chia lưới */
+  grid-template-columns: repeat(3, 1fr);  /* 3 cột rộng bằng nhau */
+  gap: 20px;                         /* khoảng cách giữa các khối */
+  padding: 20px;                     /* đệm quanh lưới */
+}
+
+article {                            /* mỗi khối kỳ quan */
+  overflow: hidden;                  /* cắt ảnh theo góc bo của khối */
+  background-color: #FFFFFF;         /* nền trắng */
+  border: 1px solid #DDDDDD;         /* viền xám mảnh */
+  border-radius: 8px;                /* bo góc khối */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);  /* đổ bóng nhẹ */
+}
+
+img {                                /* ảnh minh hoạ */
+  display: block;                    /* bỏ khe hở nhỏ dưới ảnh */
+  width: 100%;                       /* ảnh rộng bằng khối */
+  height: 170px;                     /* chiều cao cố định cho các ảnh bằng nhau */
+  object-fit: cover;                 /* cắt ảnh cho vừa khung, không bị méo */
+  border-bottom: 3px solid #2E7D32;  /* viền xanh dưới ảnh */
+}
+
+h2 {                                 /* tiêu đề từng kỳ quan (có số thứ tự) */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 10px 12px 4px;            /* đệm: trên 10px, trái/phải 12px, dưới 4px */
+  font-size: 16px;                   /* cỡ chữ */
+  color: #1B5E20;                    /* chữ xanh đậm */
+}
+
+article p {                          /* đoạn mô tả */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 0 12px 14px;              /* đệm: trái/phải 12px, dưới 14px */
+  font-size: 13px;                   /* cỡ chữ nhỏ */
+  line-height: 1.5;                  /* giãn dòng */
+  color: #333333;                    /* chữ xám đậm */
+}

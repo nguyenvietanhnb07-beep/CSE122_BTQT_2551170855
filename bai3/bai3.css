@@ -1,0 +1,49 @@
+body{
+    background: linear-gradient(#7ec8e3, #0a5c8a);
+    padding: 30px;
+}
+
+.khung-bai{
+    background-color: white;
+    max-width: 800px;
+    border-radius: 20px;
+    margin: 0 auto;
+    padding: 30px;
+}
+
+h1{
+    text-align: center;
+    font-weight: bold;
+    color: #0b3d5c;
+    margin-bottom: 20px;
+}
+
+.mo-dau{
+    background-color: #0b3d5c;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    font-style: italic;
+    border-radius: 20px;
+    padding:15px;
+}
+
+img{
+    border-radius: 8px;
+    float: right;
+    margin-left: 15px;
+    width: 300px;
+}
+p{
+    text-align: justify;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+p::first-letter{
+    font-size: 35px;
+    color: #0b3d5c;
+    float:left;
+    margin-right: 5px;
+    line-height: 1;
+    font-weight: bold;
+}

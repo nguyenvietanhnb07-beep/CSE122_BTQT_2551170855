@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 20 — Hiệu ứng ảnh với CSS Filter</title>
+  <!-- Liên kết file CSS -->
+  <link rel="stylesheet" href="bai20.css">
+</head>
+
+<body>
+
+  <!-- Vùng nền tối chứa khung ảnh và thanh nút -->
+  <main class="nen">
+
+    <!-- Khung ảnh: ảnh hoa hồng + dòng chữ -->
+    <div class="khung">
+      <img id="anh" class="gray" src="hoahong.gif" alt="Hoa hồng">
+      <p class="chu">Special For You</p>
+    </div>
+
+    <!-- Thanh nút: data-hu là tên class hiệu ứng sẽ gắn cho ảnh khi bấm.
+         Nút Gray có class "chon" vì ảnh mặc định đang là Gray -->
+    <div class="thanh-nut" id="thanhNut">
+      <button type="button" data-hu="gray" class="chon">Gray</button>
+      <button type="button" data-hu="xray">Xray</button>
+      <button type="button" data-hu="invert">Invert</button>
+      <button type="button" data-hu="fliph">FlipH</button>
+      <button type="button" data-hu="flipv">FlipV</button>
+      <button type="button" data-hu="glow">Glow</button>
+      <button type="button" data-hu="shadow">Shadow</button>
+      <button type="button" data-hu="bold">Bold Shadow</button>
+      <button type="button" data-hu="dropshadow">DropShadow</button>
+      <button type="button" data-hu="blur">Blur</button>
+      <button type="button" data-hu="wave">Wave</button>
+      <button type="button" data-hu="mask">Mask</button>
+      <button type="button" data-hu="alpha">Alpha</button>
+    </div>
+  </main>
+
+  <!-- Bộ lọc SVG cho hiệu ứng Wave (làm ảnh gợn sóng): feTurbulence tạo nhiễu,
+       feDisplacementMap dùng nhiễu đó để làm lệch các điểm ảnh. Ẩn đi, chỉ để CSS gọi bằng url(#song) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <filter id="song">
+      <feTurbulence type="turbulence" baseFrequency="0.01 0.06" numOctaves="2" result="nhieu"></feTurbulence>
+      <feDisplacementMap in="SourceGraphic" in2="nhieu" scale="14"></feDisplacementMap>
+    </filter>
+  </svg>
+
+  <!-- Nạp JavaScript ở CUỐI body -->
+  <script src="bai20.js"></script>
+</body>
+</html>

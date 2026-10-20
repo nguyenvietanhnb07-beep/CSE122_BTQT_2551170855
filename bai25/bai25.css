@@ -1,0 +1,6 @@
+/* Bootstrap đã lo gần hết giao diện, file này chỉ bổ sung phần Bootstrap không có sẵn */
+
+.card-img-top {                      /* ảnh đầu mỗi thẻ du lịch */
+  height: 200px;                     /* chiều cao cố định để 3 ảnh bằng nhau dù tỉ lệ gốc khác nhau */
+  object-fit: cover;                 /* cắt ảnh cho vừa khung, không bị méo */
+}

@@ -1,0 +1,91 @@
+* {                                  /* áp dụng cho mọi phần tử */
+  box-sizing: border-box;            /* width đã gồm cả padding và viền */
+}
+
+body {                               /* toàn bộ trang */
+  margin: 0;                         /* bỏ lề mặc định */
+  padding: 30px 20px;                /* chừa khoảng trống quanh thẻ */
+  font-family: Arial, sans-serif;    /* font không chân */
+  background-color: #FFF7ED;         /* nền trang cam rất nhạt */
+}
+
+.the {                               /* thẻ form */
+  max-width: 480px;                  /* độ rộng tối đa */
+  margin: 0 auto;                    /* căn giữa ngang */
+  padding: 24px;                     /* đệm bên trong */
+  background-color: #FFFFFF;         /* nền trắng */
+  border: 1px solid #FED7AA;         /* viền cam nhạt */
+  border-radius: 12px;               /* bo góc */
+  box-shadow: 0 6px 20px rgba(194, 65, 12, 0.08);  /* đổ bóng nhẹ */
+}
+
+h1 {                                 /* tiêu đề */
+  margin: 0 0 4px;                   /* chỉ chừa 4px phía dưới */
+  font-size: 24px;                   /* cỡ chữ lớn */
+  color: #C2410C;                    /* chữ cam đậm */
+}
+
+.mo-ta {                             /* dòng mô tả dưới tiêu đề */
+  margin: 0 0 16px;                  /* cách trường đầu tiên */
+  font-size: 14px;                   /* cỡ chữ nhỏ */
+  color: #6B7280;                    /* chữ xám */
+}
+
+.truong {                            /* khung mỗi trường */
+  margin-bottom: 4px;                /* khoảng cách tới trường kế tiếp */
+}
+
+label {                              /* nhãn */
+  display: block;                    /* nằm trên ô nhập */
+  margin-bottom: 6px;                /* cách ô nhập */
+  font-size: 14px;                   /* cỡ chữ */
+  font-weight: bold;                 /* chữ đậm */
+  color: #374151;                    /* chữ xám đậm */
+}
+
+input {                              /* ô nhập */
+  width: 100%;                       /* rộng bằng thẻ */
+  padding: 12px 14px;                /* đệm bên trong */
+  font-size: 16px;                   /* cỡ chữ */
+  border: 2px solid #D1D5DB;         /* viền xám (trạng thái chưa kiểm tra) */
+  border-radius: 8px;                /* bo góc */
+}
+
+input:focus {                        /* khi đang gõ vào ô */
+  outline: none;                     /* bỏ khung focus mặc định */
+}
+
+.tb {                                /* dòng thông báo dưới ô nhập */
+  min-height: 20px;                  /* giữ chỗ để form không giật khi thông báo hiện ra */
+  margin: 6px 0 8px;                 /* cách ô nhập và trường bên dưới */
+  font-size: 13px;                   /* cỡ chữ nhỏ */
+}
+
+.loi input {                         /* ô nhập bị sai */
+  background-color: #FEF2F2;         /* nền đỏ rất nhạt */
+  border-color: #DC2626;             /* viền đỏ */
+}
+
+.loi .tb {                           /* thông báo lỗi */
+  color: #DC2626;                    /* chữ đỏ */
+}
+
+.hop-le input {                      /* ô nhập đúng */
+  border-color: #16A34A;             /* viền xanh */
+}
+
+.hop-le .tb {                        /* thông báo hợp lệ */
+  color: #16A34A;                    /* chữ xanh */
+}
+
+button {                             /* nút Đăng ký */
+  width: 100%;                       /* rộng bằng thẻ */
+  margin-top: 6px;                   /* cách trường phía trên */
+  padding: 14px;                     /* đệm bên trong */
+  font-size: 16px;                   /* cỡ chữ */
+  color: #FFFFFF;                    /* chữ trắng */
+  background-color: #C2410C;         /* nền cam đậm */
+  border: none;                      /* bỏ viền mặc định */
+  border-radius: 8px;                /* bo góc */
+  cursor: pointer;                   /* con trỏ hình bàn tay */
+}

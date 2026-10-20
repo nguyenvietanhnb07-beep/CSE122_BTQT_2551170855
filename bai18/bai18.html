@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 18 — Trang bài viết kèm danh sách</title>
+  <!-- Liên kết file CSS -->
+  <link rel="stylesheet" href="bai18.css">
+</head>
+
+<body>
+  <!-- Dải tiêu đề trang -->
+  <header class="dai">Bài 18 — Trang bài viết kèm danh sách</header>
+
+  <!-- Bài viết (article = nội dung độc lập) -->
+  <article class="bai-viet">
+    <h1>Bông điên điển</h1>
+    <p class="phu-de">Món ngon mùa nước nổi</p>
+
+    <!-- Ảnh đặt TRƯỚC đoạn văn để nổi bên phải, chữ chạy vòng bên trái -->
+    <img src="Diendien.jpg" alt="Bông điên điển">
+
+    <!-- Đoạn có chữ cái đầu to (drop cap) do CSS ::first-letter tạo -->
+    <p class="mo-dau">Mỗi năm, vào đầu mùa nước nổi, những cây điên điển bên bờ sông, bờ rạch lại xanh tươi trở lại, trổ đầy hoa vàng rực giữa vùng lũ Đồng bằng sông Cửu Long.</p>
+
+    <p>Trước đây, người dân nghèo dùng bông điên điển nấu cháo cầm cự qua tháng ngày khó khăn. Ngày nay, bông điên điển trở thành món ngon: làm dưa chỉ cần ngâm với giá sống trong nước muối vừa mặn, ba ngày sau là có dĩa dưa chua giòn chấm nước tương ớt.</p>
+
+    <!-- Khối phụ: viền xanh, danh sách chia 2 cột -->
+    <aside class="khoi">
+      <h2>Hương vị miền Nam</h2>
+      <ul>
+        <li>Bánh tráng Mỹ Lồng, bánh phồng Sơn Đốc</li>
+        <li>Dồi lươn rim nước cốt dừa</li>
+        <li>Bún mắm</li>
+        <li>Bún nước lèo Sóc Trăng</li>
+        <li>Nem lai Vung</li>
+        <li>Cốm dẹp</li>
+        <li>Bưởi Tân Triều</li>
+      </ul>
+    </aside>
+  </article>
+</body>
+</html>
